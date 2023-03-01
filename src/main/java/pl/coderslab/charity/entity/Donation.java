@@ -12,14 +12,14 @@ public class Donation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     private int quantity;
 
-    @OneToMany
+    @ManyToMany
     List<Category> categories = new ArrayList<>();
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "institution_id")
     private Institution institution;
 
@@ -35,5 +35,6 @@ public class Donation {
 
     private String pickUpComment;
 
+    private String telNo;
 
 }

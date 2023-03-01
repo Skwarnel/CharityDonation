@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Institution {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     private String name;
 

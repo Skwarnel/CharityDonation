@@ -37,6 +37,3 @@
             </h1>
         </div>
     </div>
-</header>
-</body>
-</html>
