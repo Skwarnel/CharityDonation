@@ -1,9 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<%@ include file="header.jsp"%>
+<%@ include file="header.jsp" %>
 <section class="stats">
     <div class="container container--85">
         <div class="stats--item">
@@ -73,32 +73,33 @@
             Możesz sprawdzić czym się zajmują.</p>
 
         <ul class="help--slides-items">
-            <li>
-                <div class="col">
-                    <div class="title">Fundacja "Dbam o Zdrowie"</div>
-                    <div class="subtitle">Cel i misja: Pomoc dzieciom z ubogich rodzin.</div>
-                </div>
-
-                <div class="col">
-                    <div class="title">Fundacja "A kogo"</div>
-                    <div class="subtitle">Cel i misja: Pomoc wybudzaniu dzieci ze śpiączki.</div>
-                </div>
-            </li>
-
-            <li>
-                <div class="col">
-                    <div class="title">Fundacja “Dla dzieci"</div>
-                    <div class="subtitle">Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej.</div>
-                </div>
-                <div class="col">
-                    <div class="title">Fundacja “Bez domu”</div>
-                    <div class="subtitle">Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania</div>
-                </div>
-
-            </li>
-
+            <c:forEach items="${institutions}" var="item" varStatus="status">
+                <c:choose>
+                    <c:when test="${status.index % 2 == 0}">
+                        <li>
+                            <div class="col">
+                                <div class="title">${item.name}</div>
+                                <div class="subtitle">${item.description}</div>
+                            </div>
+                    <c:if test="${institutions.size() % 2 != 0 && status.index == institutions.size() - 1}">
+                            <div class="col">
+                                <div class="title">Zapraszamy do Współpracy</div>
+                                <div class="subtitle">Prowadzisz Fundację? Zgłoś się do nas!</div>
+                            </div>
+                        </li>
+                    </c:if>
+                    </c:when>
+                    <c:when test="${status.index % 2 != 0}">
+                            <div class="col">
+                                <div class="title">${item.name}</div>
+                                <div class="subtitle">${item.description}</div>
+                            </div>
+                        </li>
+                    </c:when>
+                </c:choose>
+            </c:forEach>
         </ul>
     </div>
 
 </section>
-<%@ include file="footer.jsp"%>
+<%@ include file="footer.jsp" %>
