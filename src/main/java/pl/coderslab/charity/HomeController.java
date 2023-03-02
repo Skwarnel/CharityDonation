@@ -4,7 +4,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import pl.coderslab.charity.entity.Institution;
+import pl.coderslab.charity.repository.DonationRepository;
 import pl.coderslab.charity.repository.InstitutionRepository;
 
 import javax.persistence.criteria.CriteriaBuilder;
@@ -16,8 +18,11 @@ public class HomeController {
 
     InstitutionRepository institutionRepository;
 
-    public HomeController(InstitutionRepository institutionRepository) {
+    DonationRepository donationRepository;
+
+    public HomeController(InstitutionRepository institutionRepository, DonationRepository donationRepository) {
         this.institutionRepository = institutionRepository;
+        this.donationRepository = donationRepository;
     }
 
     @ModelAttribute("institutions")
@@ -26,7 +31,20 @@ public class HomeController {
     }
 
     @RequestMapping("/")
-    public String homeAction(Model model){
+    public String homeAction(Model model) {
         return "index";
     }
+
+    @ModelAttribute("bagsQnt")
+    public String countBagsQuantity() {
+        int bagsQuantity = donationRepository.countBags();
+        return String.valueOf(bagsQuantity);
+    }
+
+    @ModelAttribute("donationQnt")
+    public String countDonationQuantity() {
+        int donationQuantity = donationRepository.countDonation();
+        return String.valueOf(donationQuantity);
+    }
+
 }
