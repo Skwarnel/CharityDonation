@@ -40,7 +40,7 @@
         No tel: <form:input path="telNo"/>
     </div>
     <div>
-        Fundacja: <form:select path="institution" items="${institutions}" itemLabel="name" itemValue="id"/>
+        Fundacja: <form:select path="institution" items="${institutionsToShow}" itemLabel="name" itemValue="id"/>
     </div>
     <div>
         Kategoria: <form:checkboxes path="categories" items="${categoriesToShow}"

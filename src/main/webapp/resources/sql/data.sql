@@ -13,8 +13,6 @@ VALUES ('Cel i misja: Pomoc dzieciom z ubogich rodzin.', 'Fundacja "Dbam o Zdrow
        ('Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania', 'Fundacja “Bez domu”');
 
 
-SELECT * FROM institutions;
-
 INSERT INTO donations (city, pick_up_comment, pick_up_date, pick_up_time, quantity, street, tel_no, zip_code, institution_id)
 VALUES ('Cracow', 'noComment', '2023-03-01', '12:34:04.021', 1, 'streetAddress', '+48555555555', '45-450', 2),
        ('Cracow', 'noComment', '2023-03-01', '12:34:04.021', 2, 'streetAddress', '+48555555555', '45-450', 2),
@@ -23,6 +21,12 @@ VALUES ('Cracow', 'noComment', '2023-03-01', '12:34:04.021', 1, 'streetAddress',
        ('Cracow', 'noComment', '2023-03-01', '12:34:04.021', 5, 'streetAddress', '+48555555555', '45-450', 1),
        ('Cracow', 'noComment', '2023-03-01', '12:34:04.021', 6, 'streetAddress', '+48555555555', '45-450', 3);
 
+INSERT INTO categories (name) VALUES
+                                  ('ubrania, które nadają się do ponownego użycia'),
+                                  ('ubrania, do wyrzucenia'),
+                                  ('zabawki'),
+                                  ('książki'),
+                                  ('inne');
 
 SELECT * FROM donations;
 
@@ -30,9 +34,3 @@ SELECT * FROM institutions;
 
 SELECT * FROM categories;
 
-INSERT INTO categories (name) VALUES
-                                      ('ubrania, które nadają się do ponownego użycia'),
-                                      ('ubrania, do wyrzucenia'),
-                                      ('zabawki'),
-                                      ('książki'),
-                                      ('inne');

@@ -72,30 +72,21 @@
             Możesz sprawdzić czym się zajmują.</p>
 
         <ul class="help--slides-items">
-            <c:forEach items="${institutions}" var="item" varStatus="status">
-                <c:choose>
-                    <c:when test="${status.index % 2 == 0}">
+            <c:forEach items="${institutionsToShow}" var="item" varStatus="status">
+                    <c:if test="${status.index % 2 == 0}">
                         <li>
                             <div class="col">
                                 <div class="title">${item.name}</div>
                                 <div class="subtitle">${item.description}</div>
                             </div>
-                    <c:if test="${institutions.size() % 2 != 0 && status.index == institutions.size() - 1}">
-                            <div class="col">
-                                <div class="title">Zapraszamy do Współpracy</div>
-                                <div class="subtitle">Prowadzisz Fundację? Zgłoś się do nas!</div>
-                            </div>
-                        </li>
                     </c:if>
-                    </c:when>
-                    <c:when test="${status.index % 2 != 0}">
+                    <c:if test="${status.index % 2 != 0}">
                             <div class="col">
                                 <div class="title">${item.name}</div>
                                 <div class="subtitle">${item.description}</div>
                             </div>
                         </li>
-                    </c:when>
-                </c:choose>
+                    </c:if>
             </c:forEach>
         </ul>
     </div>

@@ -9,7 +9,6 @@ import java.util.List;
 @Entity
 @Table(name = "donations")
 public class Donation {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -29,9 +28,9 @@ public class Donation {
 
     private String zipCode;
 
-    private String pickUpDate;
+    private LocalDate pickUpDate;
 
-    private String pickUpTime;
+    private LocalTime pickUpTime;
 
     private String pickUpComment;
 
@@ -40,7 +39,7 @@ public class Donation {
     public Donation() {
     }
 
-    public Donation(int quantity, List<Category> categories, Institution institution, String street, String city, String zipCode, String pickUpDate, String pickUpTime, String pickUpComment, String telNo) {
+    public Donation(int quantity, List<Category> categories, Institution institution, String street, String city, String zipCode, LocalDate pickUpDate, LocalTime pickUpTime, String pickUpComment, String telNo) {
         this.quantity = quantity;
         this.categories = categories;
         this.institution = institution;
@@ -109,19 +108,19 @@ public class Donation {
         this.zipCode = zipCode;
     }
 
-    public String getPickUpDate() {
+    public LocalDate getPickUpDate() {
         return pickUpDate;
     }
 
-    public void setPickUpDate(String pickUpDate) {
+    public void setPickUpDate(LocalDate pickUpDate) {
         this.pickUpDate = pickUpDate;
     }
 
-    public String getPickUpTime() {
+    public LocalTime getPickUpTime() {
         return pickUpTime;
     }
 
-    public void setPickUpTime(String pickUpTime) {
+    public void setPickUpTime(LocalTime pickUpTime) {
         this.pickUpTime = pickUpTime;
     }
 
