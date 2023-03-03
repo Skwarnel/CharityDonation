@@ -25,3 +25,14 @@ VALUES ('Cracow', 'noComment', '2023-03-01', '12:34:04.021', 1, 'streetAddress',
 
 
 SELECT * FROM donations;
+
+SELECT * FROM institutions;
+
+SELECT * FROM categories;
+
+INSERT INTO categories (name) VALUES
+                                      ('ubrania, które nadają się do ponownego użycia'),
+                                      ('ubrania, do wyrzucenia'),
+                                      ('zabawki'),
+                                      ('książki'),
+                                      ('inne');
