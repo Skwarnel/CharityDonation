@@ -28,10 +28,10 @@
         Kod pocztowy: <form:input path="zipCode"/>
     </div>
     <div>
-        Data: <form:input path="pickUpDate"/>
+        Data: <form:input type="date" path="pickUpDate"/>
     </div>
     <div>
-        Godzina: <form:input path="pickUpTime"/>
+        Godzina: <form:input type="time" path="pickUpTime"/>
     </div>
     <div>
         Komentarz dla kuriera: <form:input path="pickUpComment"/>
