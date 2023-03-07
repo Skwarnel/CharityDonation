@@ -28,9 +28,9 @@ public class Donation {
 
     private String zipCode;
 
-    private LocalDate pickUpDate;
+    private String pickUpDate;
 
-    private LocalTime pickUpTime;
+    private String pickUpTime;
 
     private String pickUpComment;
 
@@ -39,7 +39,7 @@ public class Donation {
     public Donation() {
     }
 
-    public Donation(int quantity, List<Category> categories, Institution institution, String street, String city, String zipCode, LocalDate pickUpDate, LocalTime pickUpTime, String pickUpComment, String telNo) {
+    public Donation(int quantity, List<Category> categories, Institution institution, String street, String city, String zipCode, String pickUpDate, String pickUpTime, String pickUpComment, String telNo) {
         this.quantity = quantity;
         this.categories = categories;
         this.institution = institution;
@@ -108,19 +108,20 @@ public class Donation {
         this.zipCode = zipCode;
     }
 
-    public LocalDate getPickUpDate() {
+
+    public String getPickUpDate() {
         return pickUpDate;
     }
 
-    public void setPickUpDate(LocalDate pickUpDate) {
+    public void setPickUpDate(String pickUpDate) {
         this.pickUpDate = pickUpDate;
     }
 
-    public LocalTime getPickUpTime() {
+    public String getPickUpTime() {
         return pickUpTime;
     }
 
-    public void setPickUpTime(LocalTime pickUpTime) {
+    public void setPickUpTime(String pickUpTime) {
         this.pickUpTime = pickUpTime;
     }
 

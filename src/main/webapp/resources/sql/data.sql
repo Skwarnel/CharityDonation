@@ -28,9 +28,12 @@ INSERT INTO categories (name) VALUES
                                   ('książki'),
                                   ('inne');
 
+USE `charity-donation`;
+
 SELECT * FROM donations;
 
 SELECT * FROM institutions;
+
 
 SELECT * FROM categories;
 
