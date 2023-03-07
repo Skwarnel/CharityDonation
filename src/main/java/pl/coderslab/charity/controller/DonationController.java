@@ -29,7 +29,7 @@ public class DonationController {
 
     @RequestMapping("/form")
     public String showForm() {
-        return "form";
+        return "form1";
     }
 
     @ModelAttribute("donation")

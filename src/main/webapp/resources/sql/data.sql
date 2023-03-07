@@ -30,7 +30,7 @@ INSERT INTO categories (name) VALUES
 
 USE `charity-donation`;
 
-SELECT * FROM donations;
+SELECT * FROM donations;p
 
 SELECT * FROM institutions;
 
