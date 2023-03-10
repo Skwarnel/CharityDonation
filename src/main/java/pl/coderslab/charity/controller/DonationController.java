@@ -29,7 +29,7 @@ public class DonationController {
 
     @RequestMapping("/form")
     public String showForm() {
-        return "form1";
+        return "form";
     }
 
     @ModelAttribute("donation")
@@ -53,6 +53,4 @@ public class DonationController {
         donationRepository.save(donation);
         return "form-confirmation";
     }
-
-
 }

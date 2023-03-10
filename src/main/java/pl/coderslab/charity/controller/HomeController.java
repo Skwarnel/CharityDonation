@@ -39,14 +39,12 @@ public class HomeController {
     }
 
     @ModelAttribute("bagsQnt")
-    public String countBagsQuantity() {
-        int bagsQuantity = donationRepository.countBags();
-        return String.valueOf(bagsQuantity);
+    public int countBagsQuantity() {
+        return donationRepository.countBags().orElse(0);
     }
 
     @ModelAttribute("donationQnt")
-    public String countDonationQuantity() {
-        int donationQuantity = donationRepository.countDonation();
-        return String.valueOf(donationQuantity);
+    public long countDonationQuantity() {
+        return  donationRepository.count();
     }
 }
