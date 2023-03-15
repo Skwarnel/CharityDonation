@@ -36,6 +36,5 @@ SELECT * FROM donations_categories;
 
 SELECT * FROM institutions;
 
-
 SELECT * FROM categories;
 

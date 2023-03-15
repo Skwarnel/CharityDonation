@@ -51,6 +51,7 @@ public class DonationController {
     @RequestMapping("/form-confirmation")
     public String createDonation(Model model, Donation donation) {
         donationRepository.save(donation);
+        System.out.println("Added donation: " + donation);
         return "form-confirmation";
     }
 }

@@ -211,15 +211,14 @@
                         <ul>
                             <li>
                                 <span class="icon icon-bag"></span>
-                                <span class="summary--text"> worków</span>
+                                <span class="summary--text" id="inputBagsQnt"></span>
                             </li>
 
                             <li>
                                 <span class="icon icon-hand"></span>
-                                <span class="summary--text">
-                                Dla "institution">
-                                </span
-                                >
+                                <span class="summary--text" id="inputInstitution">
+
+                                </span>
                             </li>
                         </ul>
                     </div>
@@ -228,19 +227,19 @@
                         <div class="form-section--column">
                             <h4>Adres odbioru:</h4>
                             <ul>
-                                <li id="inputStreet">street</li>
-                                <li>city</li>
-                                <li>zipCode</li>
-                                <li>telNo</li>
+                                <li id="inputStreet"></li>
+                                <li id="inputCity"></li>
+                                <li id="inputZipCode"></li>
+                                <li id="phoneNumber"></li>
                             </ul>
                         </div>
 
                         <div class="form-section--column">
                             <h4>Termin odbioru:</h4>
                             <ul>
-                                <li>ickUpDate</li>
-                                <li>ickUpTime</li>
-                                <li>pickUpComment</li>
+                                <li id="inputPickUpDate"></li>
+                                <li id="inputPickUpTime"></li>
+                                <li id="inputPickUpComment"></li>
                             </ul>
                         </div>
                     </div>

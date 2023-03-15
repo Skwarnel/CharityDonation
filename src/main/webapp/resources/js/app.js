@@ -163,7 +163,31 @@ document.addEventListener("DOMContentLoaded", function() {
       this.$stepInstructions[0].parentElement.parentElement.hidden = this.currentStep >= 5;
       this.$step.parentElement.hidden = this.currentStep >= 5;
 
-      // TODO: get data from inputs and show them in summary
+      const bagsQnt = document.getElementById("inputBagsQnt");
+      const institution = document.getElementById("inputInstitution");
+      const categories = document.querySelectorAll("[name=categories]:checked");
+      const street = document.getElementById("inputStreet");
+      const city = document.getElementById("inputCity");
+      const zipCode = document.getElementById("inputZipCode");
+      const phoneNumber = document.getElementById("phoneNumber");
+      const pickUpDate = document.getElementById("inputPickUpDate");
+      const pickUpTime = document.getElementById("inputPickUpTime");
+      const pickUpComment = document.getElementById("inputPickUpComment");
+
+      for (let i = 0; i < categories.length; i++) {
+
+      }
+
+      bagsQnt.innerText = document.getElementById("quantity").value;
+      institution.innerText = "Institution JS"
+      categories.innerText = "Institution JS"
+      street.innerText = document.getElementById("street").value;
+      city.innerText = document.getElementById("city").value;
+      zipCode.innerText = document.getElementById("zipCode").value;
+      phoneNumber.innerText = document.getElementById("telNo").value;
+      pickUpDate.innerText = document.getElementById("pickUpDate").value;
+      pickUpTime.innerText = document.getElementById("pickUpTime").value;
+      pickUpComment.innerText = document.getElementById("pickUpComment").value;
     }
 
   }
