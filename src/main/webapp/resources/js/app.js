@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
       const bagsQnt = document.getElementById("inputBagsQnt");
       const institution = document.getElementById("inputInstitution");
-      const categories = document.querySelectorAll("[name=categories]:checked");
+      // const category = document.getElementById("inputCategories");
       const street = document.getElementById("inputStreet");
       const city = document.getElementById("inputCity");
       const zipCode = document.getElementById("inputZipCode");
@@ -174,13 +174,14 @@ document.addEventListener("DOMContentLoaded", function() {
       const pickUpTime = document.getElementById("inputPickUpTime");
       const pickUpComment = document.getElementById("inputPickUpComment");
 
-      for (let i = 0; i < categories.length; i++) {
-
-      }
-
       bagsQnt.innerText = document.getElementById("quantity").value;
+      const categoriesChecked = document.querySelectorAll("[name=categories]:checked");
+      categoriesChecked.forEach(function (element) {
+        const text = element.parentElement.querySelector(".description");
+        bagsQnt.append(" " + text.innerHTML + ";");
+      })
+
       institution.innerText = "Institution JS"
-      categories.innerText = "Institution JS"
       street.innerText = document.getElementById("street").value;
       city.innerText = document.getElementById("city").value;
       zipCode.innerText = document.getElementById("zipCode").value;
@@ -189,7 +190,6 @@ document.addEventListener("DOMContentLoaded", function() {
       pickUpTime.innerText = document.getElementById("pickUpTime").value;
       pickUpComment.innerText = document.getElementById("pickUpComment").value;
     }
-
   }
   const form = document.querySelector(".form--steps");
   if (form !== null) {

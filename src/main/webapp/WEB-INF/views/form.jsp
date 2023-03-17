@@ -212,6 +212,7 @@
                             <li>
                                 <span class="icon icon-bag"></span>
                                 <span class="summary--text" id="inputBagsQnt"></span>
+                                <span class="summary--text" id="inputCategories"></span>
                             </li>
 
                             <li>
@@ -281,11 +282,9 @@
         <span class="bottom-line--copy">Copyright &copy; 2018</span>
         <div class="bottom-line--icons">
             <a href="#" class="btn btn--small"
-            ><img src="images/icon-facebook.svg"
-            /></a>
+            ><img src="<c:url value="resources/images/icon-facebook.svg"/>"/></a>
             <a href="#" class="btn btn--small"
-            ><img src="images/icon-instagram.svg"
-            /></a>
+            ><img src="<c:url value="resources/images/icon-instagram.svg"/>"/></a>
         </div>
     </div>
 </footer>
