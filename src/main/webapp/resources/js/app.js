@@ -165,7 +165,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
       const bagsQnt = document.getElementById("inputBagsQnt");
       const institution = document.getElementById("inputInstitution");
-      // const category = document.getElementById("inputCategories");
       const street = document.getElementById("inputStreet");
       const city = document.getElementById("inputCity");
       const zipCode = document.getElementById("inputZipCode");
@@ -175,13 +174,19 @@ document.addEventListener("DOMContentLoaded", function() {
       const pickUpComment = document.getElementById("inputPickUpComment");
 
       bagsQnt.innerText = document.getElementById("quantity").value;
+
       const categoriesChecked = document.querySelectorAll("[name=categories]:checked");
       categoriesChecked.forEach(function (element) {
         const text = element.parentElement.querySelector(".description");
         bagsQnt.append(" " + text.innerHTML + ";");
       })
 
-      institution.innerText = "Institution JS"
+      const institutionChecked = document.querySelectorAll("[name=institution]:checked");
+      institutionChecked.forEach(function (element) {
+        const institutionName = element.parentElement.parentElement.querySelector(".title");
+        institution.append("\\\ " + institutionName.innerHTML + " //");
+      })
+
       street.innerText = document.getElementById("street").value;
       city.innerText = document.getElementById("city").value;
       zipCode.innerText = document.getElementById("zipCode").value;

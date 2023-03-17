@@ -212,7 +212,6 @@
                             <li>
                                 <span class="icon icon-bag"></span>
                                 <span class="summary--text" id="inputBagsQnt"></span>
-                                <span class="summary--text" id="inputCategories"></span>
                             </li>
 
                             <li>
