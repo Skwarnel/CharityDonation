@@ -2,6 +2,7 @@ package pl.coderslab.charity.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.coderslab.charity.entity.Category;
@@ -11,6 +12,7 @@ import pl.coderslab.charity.repository.CategoryRepository;
 import pl.coderslab.charity.repository.DonationRepository;
 import pl.coderslab.charity.repository.InstitutionRepository;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -49,9 +51,11 @@ public class DonationController {
     }
 
     @RequestMapping("/form-confirmation")
-    public String createDonation(Model model, Donation donation) {
+    public String createDonation(Model model, @Valid Donation donation, BindingResult result) {
+        if (result.hasErrors()) {
+            return "form";
+        }
         donationRepository.save(donation);
-        System.out.println("Added donation: " + donation);
         return "form-confirmation";
     }
 }
