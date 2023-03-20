@@ -1,8 +1,11 @@
 package pl.coderslab.charity.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.coderslab.charity.entity.Category;
@@ -13,6 +16,7 @@ import pl.coderslab.charity.repository.DonationRepository;
 import pl.coderslab.charity.repository.InstitutionRepository;
 
 import javax.validation.Valid;
+import javax.xml.validation.Validator;
 import java.util.List;
 
 @Controller
@@ -22,6 +26,10 @@ public class DonationController {
     DonationRepository donationRepository;
 
     CategoryRepository categoryRepository;
+
+    Validator validator;
+
+    private static Logger LOGGER = LoggerFactory.getLogger(DonationController.class);
 
     public DonationController(InstitutionRepository institutionRepository, DonationRepository donationRepository, CategoryRepository categoryRepository) {
         this.institutionRepository = institutionRepository;

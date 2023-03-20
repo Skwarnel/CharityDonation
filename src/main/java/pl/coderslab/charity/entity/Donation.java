@@ -157,4 +157,5 @@ public class Donation {
     public void setTelNo(String telNo) {
         this.telNo = telNo;
     }
+
 }
