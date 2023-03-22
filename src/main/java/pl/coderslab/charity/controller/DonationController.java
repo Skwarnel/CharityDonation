@@ -61,9 +61,14 @@ public class DonationController {
     @RequestMapping("/form-confirmation")
     public String createDonation(Model model, @Valid Donation donation, BindingResult result) {
         if (result.hasErrors()) {
-            return "form";
+            return "redirect:form-error";
         }
         donationRepository.save(donation);
         return "form-confirmation";
     }
+
+//    @RequestMapping("/error")
+//    public String showError() {
+//        return "form-error";
+//    }
 }
