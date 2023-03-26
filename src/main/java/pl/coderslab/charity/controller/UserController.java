@@ -1,2 +1,4 @@
-package pl.coderslab.charity.controller;public class UserController {
+package pl.coderslab.charity.controller;
+
+public class UserController {
 }
